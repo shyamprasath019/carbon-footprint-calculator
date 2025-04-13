@@ -1,7 +1,7 @@
-// File: src/routes/emissions.js
+// File: routes/emissions.js
 const express = require('express');
 const router = express.Router();
-const emissionsController = require('../controllers/emissionsController');
+const emissionsController = require('../controllers/emissionController');
 const auth = require('../middleware/auth');
 
 // Calculate emissions

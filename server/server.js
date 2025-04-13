@@ -1,4 +1,4 @@
-// File: src/server.js
+// File: server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -22,6 +22,11 @@ mongoose.connect(process.env.MONGO_URI)
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/emissions', emissionRoutes);
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'Server is running' });
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
